@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đang chuyển hướng...</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #ffffff;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: system-ui, -apple-system, sans-serif;
+      color: #333333;
+    }
+
+    /* Thanh tiến trình cố định phía trên */
+    #bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: rgba(0, 0, 0, 0.1);
+      z-index: 9999;
+    }
+
+    #fill {
+      height: 100%;
+      width: 100%;
+      background: #0066cc;
+      transform-origin: left;
+      transition: transform 1s linear;
+    }
+  </style>
+</head>
+<body>
+  <div id="bar"><div id="fill"></div></div>
+  <p>Đang chuyển hướng, vui lòng chờ trong giây lát...</p>
+
+  <script>
+    // Điền URL đích của bạn tại đây
+    const DEST = "https://ad.fo88z.site/?a=1f73639481020ebcaee0d6d925a6325f&utm_campaign=tiktokads&utm_source=tc&utm_medium=conversion&utm_term=__AID__&utm_content=video"; 
+    const SECONDS = 1;
+
+    // Kích hoạt hiệu ứng thanh chạy
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const fillEl = document.getElementById('fill');
+        if (fillEl) {
+          fillEl.style.transform = 'scaleX(0)';
+        }
+      });
+    });
+
+    // Thực hiện chuyển hướng
+    setTimeout(() => {
+      window.location.href = DEST;
+    }, SECONDS * 1000);
+  </script>
+</body>
+</html>
